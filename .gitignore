@@ -35,3 +35,4 @@ override.tf.json
 terraform.rc
 credentials.json
 terraform.tfvars
+cloud-sql-proxy
