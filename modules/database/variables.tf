@@ -20,7 +20,7 @@ variable "instance_name" {
 
 variable "database_version" {
   description = "value of the database version"
-  default = "POSTGRES_14"
+  default = "POSTGRES_15"
 }
 
 variable "tier" {
@@ -31,4 +31,12 @@ variable "tier" {
 variable "credentials" {
   description = "value of the credentials"
   default = "/.config/gcloud/usa-kabu-prd.json"
+}
+
+variable "database_user" {
+  type = string
+}
+
+variable "database_password" {
+  type = string
 }

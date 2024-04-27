@@ -1,3 +1,9 @@
+resource "google_sql_database" "default" {
+  name     = var.database_name
+  instance = google_sql_database_instance.default.name
+  project  = var.project_id
+}
+
 resource "google_sql_database_instance" "default" {
   name             = var.instance_name
   database_version = var.database_version
@@ -9,10 +15,12 @@ resource "google_sql_database_instance" "default" {
     disk_size = 10
     disk_type = "PD_SSD"
   }
+
 }
 
-resource "google_sql_database" "default" {
-  name     = var.database_name
+resource "google_sql_user" "default" {
+  name     = var.database_user
   instance = google_sql_database_instance.default.name
+  password = var.database_password
   project  = var.project_id
 }
