@@ -1,6 +1,6 @@
 variable "project_id" {
   description = "value of the project id"
-  default = "project-id"
+  default = "usa-kabu-prd"
 }
 
 variable "region" {
@@ -10,12 +10,12 @@ variable "region" {
 
 variable "database_name" {
   description = "value of the database name"
-  default = "database-name"
+  default = "stocks"
 }
 
 variable "instance_name" {
   description = "value of the instance name"
-  default = "instance-name"
+  default = "usakabu"
 }
 
 variable "database_version" {
@@ -26,4 +26,9 @@ variable "database_version" {
 variable "tier" {
   description = "value of the tier"
   default = "db-f1-micro"
+}
+
+variable "credentials" {
+  description = "value of the credentials"
+  default = "/.config/gcloud/usa-kabu-prd.json"
 }
