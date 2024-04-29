@@ -14,6 +14,11 @@ resource "google_sql_database_instance" "default" {
     disk_autoresize = true
     disk_size = 10
     disk_type = "PD_SSD"
+
+    ip_configuration {
+      ipv4_enabled    = true
+      require_ssl    = true
+    }
   }
 
 }

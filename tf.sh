@@ -1,7 +1,7 @@
 #!/bin/bash
 
-command=${@:1}
-DIR="modules/database"
+COMMAND=$1
+DIR=$2
 
 docker run -it --rm \
   -v "$PWD/$DIR":/work \
@@ -10,4 +10,4 @@ docker run -it --rm \
   -e GOOGLE_APPLICATION_CREDENTIALS=/.config/gcloud/usa-kabu-prd.json \
   --entrypoint "/bin/sh" \
   hashicorp/terraform:latest \
-  -c "terraform $command"
+  -c "terraform $COMMAND"
