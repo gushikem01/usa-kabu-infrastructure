@@ -2,6 +2,8 @@
 
 * this is a repository for create <https://usa-kabu.com> resource on GCP
 
+1. [terraform](https://www.terraform.io/)
+
 ```code
 brew install terraform
 brew install tfenv tflint
@@ -12,11 +14,29 @@ pre-commit run -a
 chmod +x tf.sh
 ```
 
-```code
-gcloud config set project usa-kabu-prd
-gsutil mb gs://usa-kabu-terraform-state
-```
+2. [gcloud](https://cloud.google.com/sdk/docs/install)
 
 ```code
-./tf.sh init -backend-config="bucket=usa-kabu-terraform-state"
+gcloud config set project usa-kabu-prd
+gsutil mb gs://usa-kabu-prd-terraform-state
+```
+
+3. storage
+
+```code
+./tf.sh init ./modules/storage/ -backend-config="bucket=usa-kabu-prd-terraform-state"
+./tf.sh plan ./modules/storage/ -backend-config="bucket=usa-kabu-prd-terraform-state"
+./tf.sh refresh ./modules/storage/ -backend-config="bucket=usa-kabu-prd-terraform-state"
+./tf.sh apply ./modules/storage/ -backend-config="bucket=usa-kabu-prd-terraform-state"
+./tf.sh destroy ./modules/storage/ -backend-config="bucket=usa-kabu-prd-terraform-state"
+```
+
+4. secret
+
+```code
+./tf.sh init ./modules/secret -backend-config="bucket=usa-kabu-prd-terraform-state"
+./tf.sh plan ./modules/secret -backend-config="bucket=usa-kabu-prd-terraform-state"
+./tf.sh refresh ./modules/secret -backend-config="bucket=usa-kabu-prd-terraform-state"
+./tf.sh apply ./modules/secret -backend-config="bucket=usa-kabu-prd-terraform-state"
+./tf.sh destroy ./modules/secret -backend-config="bucket=usa-kabu-prd-terraform-state"
 ```

@@ -8,11 +8,6 @@ variable "region" {
   default = "us-central1"
 }
 
-variable "artifact_bucket_name" {
-  description = "value of the artifact bucket name"
-  default = "usa-kabu-artifacts"
-}
-
 variable "credentials" {
   description = "value of the credentials"
   default = "/.config/gcloud/usa-kabu-prd.json"

@@ -10,6 +10,7 @@ terraform {
         bucket  = "usa-kabu-prd-terraform-state"
         prefix  = "terraform/state"
     }
+
 }
 
 provider "google" {
