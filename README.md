@@ -40,3 +40,13 @@ gsutil mb gs://usa-kabu-prd-terraform-state
 ./tf.sh apply ./modules/secret -backend-config="bucket=usa-kabu-prd-terraform-state"
 ./tf.sh destroy ./modules/secret -backend-config="bucket=usa-kabu-prd-terraform-state"
 ```
+
+5. artifact
+
+```code
+./tf.sh init ./modules/artifact/ -backend-config="bucket=usa-kabu-prd-terraform-state"
+./tf.sh plan ./modules/artifact/ -backend-config="bucket=usa-kabu-prd-terraform-state"
+./tf.sh refresh ./modules/artifact/ -backend-config="bucket=usa-kabu-prd-terraform-state"
+./tf.sh apply ./modules/artifact/ -backend-config="bucket=usa-kabu-prd-terraform-state"
+./tf.sh destroy ./modules/artifact/ -backend-config="bucket=usa-kabu-prd-terraform-state"
+```
