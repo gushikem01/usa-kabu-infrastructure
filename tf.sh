@@ -7,7 +7,7 @@ docker run -it --rm \
   -v "$PWD/$DIR":/work \
   -v "$HOME"/.config/gcloud:/.config/gcloud \
   -w /work \
-  -e GOOGLE_APPLICATION_CREDENTIALS=/.config/gcloud/usa-kabu-prd.json \
+  -e GOOGLE_APPLICATION_CREDENTIALS=./credentials.json \
   --entrypoint "/bin/sh" \
   hashicorp/terraform:latest \
   -c "terraform $COMMAND"

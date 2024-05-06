@@ -10,5 +10,5 @@ variable "region" {
 
 variable "credentials" {
   description = "value of the credentials"
-  default = "/.config/gcloud/usa-kabu-prd.json"
+  default = "./credentials.json"
 }

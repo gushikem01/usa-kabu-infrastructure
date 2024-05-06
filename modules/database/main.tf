@@ -1,10 +1,10 @@
-resource "google_sql_database" "default" {
+resource "google_sql_database" "database" {
   name     = var.database_name
-  instance = google_sql_database_instance.default.name
+  instance = google_sql_database_instance.main.name
   project  = var.project_id
 }
 
-resource "google_sql_database_instance" "default" {
+resource "google_sql_database_instance" "main" {
   name             = var.instance_name
   database_version = var.database_version
   region           = var.region
@@ -23,9 +23,9 @@ resource "google_sql_database_instance" "default" {
 
 }
 
-resource "google_sql_user" "default" {
+resource "google_sql_user" "main" {
   name     = var.database_user
-  instance = google_sql_database_instance.default.name
+  instance = google_sql_database_instance.main.name
   password = var.database_password
   project  = var.project_id
 }

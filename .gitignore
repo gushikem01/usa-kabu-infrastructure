@@ -36,3 +36,5 @@ terraform.rc
 credentials.json
 terraform.tfvars
 cloud-sql-proxy
+credentials.json
+terraform.tfstate
